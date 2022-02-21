@@ -1,8 +1,6 @@
-# Tarea 1: Initial P :school_satchel:
+# Initial P :school_satchel:
 
 ## Consideraciones generales :octocat:
-
-* El programa corre bien e implementé __todas__ las funcionalidades mínimas, correrlo no debería ser problema.
 
 * Se asume que los archivos CSV __están creados__ y ubicados en la misma carpeta que el programa.
 
@@ -190,33 +188,6 @@ Compilación de funciones usadas a lo largo del programa, la función de cada un
     * Desde __línea 59__: Se instancia ```MenuPrincipal``` y se entra al ```while``` que controla el flujo entre la carrera y el ```MenuCompra```.
     * Desde __línea 75__: Se entra a la carrera mediante un ```while``` que itera hasta que se complete la pista o el chasis del usuario colapse. También controla el flujo entre ```MenuCarrera``` y ```MenuPits```.
 
-### Cosas implementadas y no implementadas :white_check_mark: :x:
-
-#### Programación Orientada a Objetos (POO)
-
-* **Definición de clases**: Clases ```Vehiculo```, ```Pista``` y ```Persona``` se encuentran en ```clases.py```.
-* **Relación entre clases**: 
-  * _Clases Abstractas_: ```Vehiculo```, ```Pista``` y ```Persona``` son clases abstractas.
-  * _Agregación_: ```Pista``` es una agregación de ```Persona```.
-  * _Multiherencia_: ```PistaSuprema``` hereda de ```PistaHelada``` y de ```PistaRocosa```.
-* **Cargar y guardar partidas**: ```MenuInicio``` se encarga de cargar partidas guardadas , con ayuda de las funciones ```manejar_csv()``` y ```guardar()``` del archivo ```funciones.py```.
-* **Initial P**: 
-  * _Crear partida_: Se crea la partida sin problemas.
-  * _Pits_: Se agrega el tiempo a la siguiente vuelta y se mejora el vehículo a elección del usuario.
-  * _Carrera_: 
-    * Se imprime tabla con toda la información pedida
-    * Se otorga recompensa al jugador si lidera una vuelta al circuito 
-    * Se remueve a los contrincantes descalificados
-    * Se pueden encontrar los cálculos de la velocidades en el archivo ```formulas.py```, donde ```calc_vel_rec()``` se encarga de la __velocidad recomendada__, ```calcular_velocidad_intencional``` se encarga de la __velocidad intencional__ y ```calcular_velocidad_real()``` se encarga de la __velocidad real__.
-    * En el archivo ```formulas.py``` se encuentra ```calcular_hipotermia()```
-    * En el archivo ```formulas.py``` se encuentra ```daño_recibido_cada_vuelta()```
-    * En el archivo ```formulas.py``` se encuentra ```probabilidad_accidente()```
-  * _Fin carrera_: Si el jugador gana la carrera, se le otorga __dinero y experiencia__ según las funciones ```dinero_ganador()``` y ```experiencia_recibida()```. Si un contrincante gana se le otorga __sólo experiencia__ según este última función. Por último, se imprime claramente al ganador en pantalla.
-* **Consola**: Todos los menús muestran __todas las opciones pedidas__ y son __robustos__.
-* **Archivos**: La función principal de archivos CSV es ```manejar_csv()```. Al comienzo de cada módulo se observa que se importa ```parametros.py``` con la abreviación ```p```.
-* **Bonus: Buenas Prácticas**: Se definieron __todos__ los menús como clases, sin embargo, no todos los métodos de los menús son métodos, queda a criterio del ayudante el logro del bonus. También, se centralizan las fórmulas matemáticas en el módulo ```formulas.py```.
-* **Bonus: Power-ups**: No implementado.
-
 ## Ejecución :computer:
 * El módulo principal de la tarea a ejecutar es  ```main.py```. 
 * El archivo ```parametros.py``` viene con los parámetros establecidos para obtener resultados decentes (se me quedó ```NUMERO_CONTRINCANTES``` fijado en 1, puedes cambiarlo al número que desees).
@@ -239,7 +210,6 @@ Los supuestos y consideraciones que realicé durante la tarea son los siguientes
 1. Los archivos CSV están __previamente creados y dentro de la carpeta__ que contiene al programa
 2. Se guarda la partida cada vez que sucede un __cambio importante__ (compra vehículo, mejora vehículo, fin de carrera, etc...)
 3. Si el jugador es descalificado de carrera, el ganador será __el contrincante encabezando__ y se le otorgará __sólo experiencia__ al ganar (ya que no poseen dinero).
-4. Por enunciado, en pistas rocosas los tiempos de vuelta son __constantes__ (a menos que se mejore un componente del vehículo).
-5. Se puede mejorar el vehículo de __manera ilimitada__ en los pits.
+4. Se puede mejorar el vehículo de __manera ilimitada__ en los pits.
 
 -------
